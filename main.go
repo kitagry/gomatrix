@@ -66,6 +66,7 @@ func main() {
 
 			j := 0
 			y := 0
+			firstcoldone := false
 			for j <= LINE {
 				for j < LINE && matrix[i][j] == "" {
 					j++
@@ -89,11 +90,12 @@ func main() {
 
 				matrix[i][j] = randString()
 
-				if y > length[j] {
+				if y > length[i] || firstcoldone {
 					matrix[i][z] = ""
 					matrix[i][0] = ""
 				}
 
+				firstcoldone = true
 				j++
 			}
 		}
